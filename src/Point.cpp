@@ -1,17 +1,5 @@
 #include "Point.hpp"
 
-using namespace std;
-
-int main(int argc, char **argv){
-	
-	Point monpoint = InitPoint(1, 2);
-	
-	monpoint = operation(monpoint);
-	string affiche = Display(monpoint);
-	cout<<affiche<<endl;
-	return 0;
-}
-
 Point InitPoint(int x, int y)
 {
 	Point monPoint;
@@ -25,7 +13,7 @@ Point InitPoint(int x, int y)
 std::string Display(Point lepoint)
 {
 	string point;
-	point = "(" + to_string(lepoint.xpos) + ", " + to_string(lepoint.ypos) + ")";
+	point = "(" + to_string(lepoint.xpos) + "," + to_string(lepoint.ypos) + ")";
 	return point;
 }
 
@@ -37,12 +25,8 @@ Point additionneur (Point point1, Point point2)
 	return resultat;
 }
 
-Point operation ( Point lepoint)
+Point operation (Point lepoint, string c)
 {
-	string c;	
-	cout<<"Entrez l'opération à executer :"<<endl<<"p++ : incrémente x de 1"<<endl<<"++p : incrémente y de 1"<<endl<<"p-- : décrémente x de 1"<<endl<<"--p : décrémente x de 1"<<endl;
-	cin>>c;
-	
 	if(c=="p++")
 		{
 		lepoint.xpos++;
